@@ -186,7 +186,13 @@ class _SkinCustomizerState extends ConsumerState<SkinCustomizer> {
               children: [
                 _buildQuickSpec(context, 'Weight', '450', 'GR'),
                 _buildQuickSpec(context, 'Material', 'MOLDED', 'ABS'),
-                _buildQuickSpec(context, 'Energy', 'Li-Po', '12H', isPrimary: true),
+                _buildQuickSpec(
+                  context,
+                  'Energy',
+                  'Li-Po',
+                  '12H',
+                  isPrimary: true,
+                ),
               ],
             ),
             const SizedBox(height: 24),
@@ -321,14 +327,26 @@ class _SkinCustomizerState extends ConsumerState<SkinCustomizer> {
     );
   }
 
-  Widget _buildQuickSpec(BuildContext context, String label, String value, String unit, {bool isPrimary = false}) {
+  Widget _buildQuickSpec(
+    BuildContext context,
+    String label,
+    String value,
+    String unit, {
+    bool isPrimary = false,
+  }) {
     return Container(
       width: 100,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: isPrimary ? context.colors.primaryContainer.withValues(alpha: 0.3) : AppTheme.surfaceContainerLow,
+        color: isPrimary
+            ? context.colors.primaryContainer.withValues(alpha: 0.3)
+            : AppTheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: isPrimary ? context.colors.primary.withValues(alpha: 0.2) : AppTheme.outlineVariant.withValues(alpha: 0.05)),
+        border: Border.all(
+          color: isPrimary
+              ? context.colors.primary.withValues(alpha: 0.2)
+              : AppTheme.outlineVariant.withValues(alpha: 0.05),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -337,7 +355,9 @@ class _SkinCustomizerState extends ConsumerState<SkinCustomizer> {
             label.toUpperCase(),
             style: context.textTheme.labelSmall?.copyWith(
               fontSize: 8,
-              color: isPrimary ? context.colors.primary : context.colors.onSurfaceVariant,
+              color: isPrimary
+                  ? context.colors.primary
+                  : context.colors.onSurfaceVariant,
             ),
           ),
           const SizedBox(height: 4),
@@ -350,7 +370,9 @@ class _SkinCustomizerState extends ConsumerState<SkinCustomizer> {
                 style: context.textTheme.headlineSmall?.copyWith(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  color: isPrimary ? context.colors.primary : context.colors.onSurface,
+                  color: isPrimary
+                      ? context.colors.primary
+                      : context.colors.onSurface,
                 ),
               ),
               const SizedBox(width: 2),
@@ -358,7 +380,9 @@ class _SkinCustomizerState extends ConsumerState<SkinCustomizer> {
                 unit,
                 style: context.textTheme.labelSmall?.copyWith(
                   fontSize: 8,
-                  color: isPrimary ? context.colors.primary.withValues(alpha: 0.6) : context.colors.onSurfaceVariant,
+                  color: isPrimary
+                      ? context.colors.primary.withValues(alpha: 0.6)
+                      : context.colors.onSurfaceVariant,
                 ),
               ),
             ],

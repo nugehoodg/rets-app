@@ -103,18 +103,18 @@ class MainScreen extends ConsumerWidget {
                 _buildNavItem(
                   context: context,
                   ref: ref,
-                  index: 0,
-                  activeTab: activeTab,
-                  icon: Icons.album,
-                  label: 'DECK',
-                ),
-                _buildNavItem(
-                  context: context,
-                  ref: ref,
                   index: 1,
                   activeTab: activeTab,
                   icon: Icons.storage,
                   label: 'LIBRARY',
+                ),
+                _buildNavItem(
+                  context: context,
+                  ref: ref,
+                  index: 0,
+                  activeTab: activeTab,
+                  icon: Icons.album,
+                  label: 'PLAYER',
                 ),
                 _buildNavItem(
                   context: context,

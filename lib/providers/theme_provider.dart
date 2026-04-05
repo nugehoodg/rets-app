@@ -36,6 +36,7 @@ class ThemeNotifier extends Notifier<ThemeSettings> {
     if (ref == 'TC-109') hex = '#FFB4A1';
     if (ref == 'IV-022') hex = '#C9C7B5';
     if (ref == 'EM-055') hex = '#1A3A34';
+    if (ref == 'YM-055') hex = '#FFD700';
 
     state = state.copyWith(hardwareColorHex: hex, hardwareSkinRef: ref);
     commitChanges();

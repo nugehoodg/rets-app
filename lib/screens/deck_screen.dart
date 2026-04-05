@@ -130,7 +130,7 @@ class _DeckScreenState extends ConsumerState<DeckScreen>
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      _buildDigitalDigit(context, 'P', adaptiveAccent),
+                      _buildDigitalDigit(context, 'T', adaptiveAccent),
                       _buildDigitalDigit(context, '-', adaptiveAccent),
                       StreamBuilder<int?>(
                         stream: player.currentIndexStream,

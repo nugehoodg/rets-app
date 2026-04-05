@@ -54,15 +54,15 @@ class HardwareCustomizer extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'USER GENERATED SKIN',
+                            'IMPORT A SKIN',
                             style: context.textTheme.headlineSmall?.copyWith(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            themeSettings.customSkinBase64 != null
-                                ? 'ACTIVE: V1-CUSTOM-OVERLAY'
+                            themeSettings.customSkinBase64 != ''
+                                ? 'ACTIVE: CUSTOM-OVERLAY'
                                 : 'NO CUSTOM OVERLAY DETECTED',
                             style: context.textTheme.labelSmall?.copyWith(
                               fontSize: 10,
@@ -282,6 +282,19 @@ class HardwareCustomizer extends ConsumerWidget {
                   ref.read(themeProvider.notifier).updateHardwareSkin('EM-055');
                 },
               ),
+              _buildOptionCard(
+                context: context,
+                color: const Color.fromARGB(255, 255, 225, 0),
+                title: 'Yellow Mellow',
+                optionRef: 'YM-055',
+                isActive:
+                    themeSettings.hardwareSkinRef == 'YM-055' &&
+                    themeSettings.customSkinBase64 == '',
+                onTap: () {
+                  ref.read(themeProvider.notifier).clearCustomSkin();
+                  ref.read(themeProvider.notifier).updateHardwareSkin('YM-055');
+                },
+              ),
             ],
           ),
 
@@ -420,35 +433,6 @@ class HardwareCustomizer extends ConsumerWidget {
           ),
 
           const SizedBox(height: 20),
-
-          ElevatedButton(
-            onPressed: () async {
-              await ref.read(themeProvider.notifier).commitChanges();
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('HARDWARE CONFIGURATION SAVED')),
-                );
-              }
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: context.colors.primary,
-              foregroundColor: context.colors.onPrimary,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              elevation: 4,
-            ),
-            child: Text(
-              'FINALIZE BUILD',
-              style: context.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
-                fontSize: 12,
-                color: context.colors.onPrimary,
-              ),
-            ),
-          ),
         ],
       ),
     );

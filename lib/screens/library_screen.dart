@@ -225,7 +225,7 @@ class LibraryScreen extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Selection_Metadata'.toUpperCase(),
+                          'METADATA'.toUpperCase(),
                           style: context.textTheme.labelSmall?.copyWith(
                             fontSize: 10,
                             color: context.colors.primary,
@@ -436,7 +436,7 @@ class LibraryScreen extends ConsumerWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'REWRITE_DATA',
+                                  'EDIT_DATA',
                                   style: context.textTheme.headlineSmall
                                       ?.copyWith(
                                         fontSize: 12,
@@ -860,8 +860,11 @@ class LibraryScreen extends ConsumerWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.delete_forever,
-                      size: 14, color: Colors.redAccent),
+                  icon: const Icon(
+                    Icons.delete_forever,
+                    size: 14,
+                    color: Colors.redAccent,
+                  ),
                   label: const Text(
                     'ERASE_MIXTAPE_PERMANENTLY',
                     style: TextStyle(color: Colors.redAccent, fontSize: 10),

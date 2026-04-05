@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-enum MainTab { deck, library, system }
+enum MainTab { library, deck, system }
 
 class NavigationNotifier extends Notifier<MainTab> {
   @override
@@ -9,4 +9,6 @@ class NavigationNotifier extends Notifier<MainTab> {
   void setTab(MainTab tab) => state = tab;
 }
 
-final navigationProvider = NotifierProvider<NavigationNotifier, MainTab>(NavigationNotifier.new);
+final navigationProvider = NotifierProvider<NavigationNotifier, MainTab>(
+  NavigationNotifier.new,
+);
