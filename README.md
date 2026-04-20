@@ -112,4 +112,4 @@ Download the latest APK from the Releases page and install it on your Android de
 
 ## 📜 License
 
-MIT License
+GPL3 License
